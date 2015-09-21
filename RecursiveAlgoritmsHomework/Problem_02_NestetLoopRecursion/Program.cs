@@ -4,7 +4,7 @@
 
     internal class Program
     {
-        private static void Main(string[] args)
+        private static void Main()
         {
             int n = int.Parse(Console.ReadLine());
             int[] combination = new int[n];

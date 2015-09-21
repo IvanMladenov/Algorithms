@@ -5,6 +5,10 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_02_NestetLoopRecursion", "Problem_02_NestetLoopRecursion\Problem_02_NestetLoopRecursion.csproj", "{7025F23F-6A75-438B-B3CA-ED07771D5BEB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_03_CombinationsWithRepetition", "Problem_03_CombinationsWithRepetition\Problem_03_CombinationsWithRepetition.csproj", "{F750E781-F118-493E-ACC0-BF5A22199F58}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_04_CombinationsWithoutRepetition", "Problem_04_CombinationsWithoutRepetition\Problem_04_CombinationsWithoutRepetition.csproj", "{79486807-E55E-4E15-8AEF-EEA29B251369}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{7025F23F-6A75-438B-B3CA-ED07771D5BEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{7025F23F-6A75-438B-B3CA-ED07771D5BEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{7025F23F-6A75-438B-B3CA-ED07771D5BEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F750E781-F118-493E-ACC0-BF5A22199F58}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F750E781-F118-493E-ACC0-BF5A22199F58}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F750E781-F118-493E-ACC0-BF5A22199F58}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F750E781-F118-493E-ACC0-BF5A22199F58}.Release|Any CPU.Build.0 = Release|Any CPU
+		{79486807-E55E-4E15-8AEF-EEA29B251369}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{79486807-E55E-4E15-8AEF-EEA29B251369}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{79486807-E55E-4E15-8AEF-EEA29B251369}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{79486807-E55E-4E15-8AEF-EEA29B251369}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
