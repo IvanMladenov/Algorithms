@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 14
-VisualStudioVersion = 14.0.23107.0
+# Visual Studio 2013
+VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_02_NestetLoopRecursion", "Problem_02_NestetLoopRecursion\Problem_02_NestetLoopRecursion.csproj", "{7025F23F-6A75-438B-B3CA-ED07771D5BEB}"
 EndProject
@@ -10,6 +10,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_04_CombinationsWithoutRepetition", "Problem_04_CombinationsWithoutRepetition\Problem_04_CombinationsWithoutRepetition.csproj", "{79486807-E55E-4E15-8AEF-EEA29B251369}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_05_PathsBetweenCellsInMatrix", "Problem_05_PathsBetweenCellsInMatrix\Problem_05_PathsBetweenCellsInMatrix.csproj", "{A9E836E2-8B91-4613-B7AE-9062970F9042}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_06_ConectedAreasInMatrix", "Problem_06_ConectedAreasInMatrix\Problem_06_ConectedAreasInMatrix.csproj", "{85FC2A61-C024-4195-9205-A7B1D65CB353}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{A9E836E2-8B91-4613-B7AE-9062970F9042}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A9E836E2-8B91-4613-B7AE-9062970F9042}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A9E836E2-8B91-4613-B7AE-9062970F9042}.Release|Any CPU.Build.0 = Release|Any CPU
+		{85FC2A61-C024-4195-9205-A7B1D65CB353}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{85FC2A61-C024-4195-9205-A7B1D65CB353}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{85FC2A61-C024-4195-9205-A7B1D65CB353}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{85FC2A61-C024-4195-9205-A7B1D65CB353}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
