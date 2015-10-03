@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_02_IterativelyPermu
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_03_CombinationsIteratively", "CombinationsIteratively\Problem_03_CombinationsIteratively.csproj", "{0F13103F-B5A7-4360-9013-C1FFB9DF43EF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Problem_04_GenerateSubsetsOfStringArray", "Problem_04_GenerateSubsetsOfStringArray\Problem_04_GenerateSubsetsOfStringArray.csproj", "{2779A376-3809-422C-85D4-91D6FE60CDD4}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{0F13103F-B5A7-4360-9013-C1FFB9DF43EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0F13103F-B5A7-4360-9013-C1FFB9DF43EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0F13103F-B5A7-4360-9013-C1FFB9DF43EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2779A376-3809-422C-85D4-91D6FE60CDD4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2779A376-3809-422C-85D4-91D6FE60CDD4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2779A376-3809-422C-85D4-91D6FE60CDD4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2779A376-3809-422C-85D4-91D6FE60CDD4}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
