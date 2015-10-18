@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumWithUnlimitedAmountOfCoi
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DividingPresents", "DividingPresents\DividingPresents.csproj", "{BF5E902D-6F86-49E2-97A0-C87359687484}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SumWithLimitedAmountOfCoins", "SumWithLimitedAmountOfCoins\SumWithLimitedAmountOfCoins.csproj", "{EAEA4759-485A-47E4-B1F6-0F8B45EB4F24}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{BF5E902D-6F86-49E2-97A0-C87359687484}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BF5E902D-6F86-49E2-97A0-C87359687484}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BF5E902D-6F86-49E2-97A0-C87359687484}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EAEA4759-485A-47E4-B1F6-0F8B45EB4F24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EAEA4759-485A-47E4-B1F6-0F8B45EB4F24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EAEA4759-485A-47E4-B1F6-0F8B45EB4F24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EAEA4759-485A-47E4-B1F6-0F8B45EB4F24}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

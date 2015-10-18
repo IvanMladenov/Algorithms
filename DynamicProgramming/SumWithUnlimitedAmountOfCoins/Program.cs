@@ -9,8 +9,14 @@
 
         static void Main()
         {
-            int targetSum = 6;
-            int[] coins = { 1, 2, 3, 4, 6 };
+            string[] firstLine = Console.ReadLine().Split();
+            string[] secondLine = Console.ReadLine().Split();
+            int targetSum = int.Parse(firstLine[firstLine.Length - 1]);
+            int[] coins = secondLine[secondLine.Length - 1]
+                .Split(new[] { '{', '}', ',' }, StringSplitOptions.RemoveEmptyEntries)
+                .Select(int.Parse).ToArray();
+
+            Array.Sort(coins);
 
             for (int i = coins.Length - 1; i >= 0; i--)
             {
