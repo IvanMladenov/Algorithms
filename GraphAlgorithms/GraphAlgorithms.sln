@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithmsHomework", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreasInMatrix", "AreasInMatrix\AreasInMatrix.csproj", "{2AD309C1-EE71-41E9-8533-95CEE7B00BC0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclesInGraph", "CyclesInGraph\CyclesInGraph.csproj", "{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{2AD309C1-EE71-41E9-8533-95CEE7B00BC0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD309C1-EE71-41E9-8533-95CEE7B00BC0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2AD309C1-EE71-41E9-8533-95CEE7B00BC0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
