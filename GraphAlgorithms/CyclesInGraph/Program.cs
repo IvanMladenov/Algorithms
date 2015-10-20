@@ -20,7 +20,7 @@ namespace CyclesInGraph
                 nodeRemoved = false;
                 foreach (var node in predecessors.Keys)
                 {
-                    if (predecessors[node] == 0)
+                    if (predecessors[node] <= 1)
                     {
                         foreach (var child in graph[node])
                         {
@@ -51,13 +51,20 @@ namespace CyclesInGraph
                 }
 
                 char node = line[0];
-                char edge = line[4];
+                char child = line[4];
                 if (!graph.ContainsKey(node))
                 {
                     graph.Add(node, new List<char>());
                 }
 
-                graph[node].Add(edge);
+                graph[node].Add(child);
+
+                if (!graph.ContainsKey(child))
+                {
+                    graph.Add(child, new List<char>());
+                }
+
+                graph[child].Add(node);
             }
         }
 
@@ -65,19 +72,32 @@ namespace CyclesInGraph
         {
             foreach (var node in graph.Keys)
             {
-                predecessors.Add(node, 0);
-            }
+                if (!predecessors.ContainsKey(node))
+                {
+                    predecessors.Add(node, 0);
+                }
 
-            foreach (var node in graph.Keys)
-            {
                 foreach (var child in graph[node])
                 {
-                    if (predecessors.ContainsKey(child))
+                    if (!predecessors.ContainsKey(child))
                     {
-                        predecessors[child]++;
-                    }                  
+                        predecessors.Add(child, 0);
+                    }
+
+                    predecessors[child]++;
                 }
             }
+
+            //foreach (var node in graph.Keys)
+            //{
+            //    foreach (var child in graph[node])
+            //    {
+            //        if (predecessors.ContainsKey(child))
+            //        {
+            //            predecessors[child]++;
+            //        }                  
+            //    }
+            //}
         }
     }
 }

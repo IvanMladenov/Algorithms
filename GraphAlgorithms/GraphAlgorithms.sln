@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreasInMatrix", "AreasInMat
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CyclesInGraph", "CyclesInGraph\CyclesInGraph.csproj", "{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Salaries", "Salaries\Salaries.csproj", "{6E26A824-199C-4D28-A42E-2EA6DABDED2B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{43B015EF-BB6C-4E4D-AE8D-64A75F61CCAB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6E26A824-199C-4D28-A42E-2EA6DABDED2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6E26A824-199C-4D28-A42E-2EA6DABDED2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6E26A824-199C-4D28-A42E-2EA6DABDED2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6E26A824-199C-4D28-A42E-2EA6DABDED2B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
