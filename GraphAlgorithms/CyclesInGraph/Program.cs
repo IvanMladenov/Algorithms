@@ -1,5 +1,4 @@
-﻿
-namespace CyclesInGraph
+﻿namespace CyclesInGraph
 {
     using System;
     using System.Collections.Generic;
@@ -87,17 +86,6 @@ namespace CyclesInGraph
                     predecessors[child]++;
                 }
             }
-
-            //foreach (var node in graph.Keys)
-            //{
-            //    foreach (var child in graph[node])
-            //    {
-            //        if (predecessors.ContainsKey(child))
-            //        {
-            //            predecessors[child]++;
-            //        }                  
-            //    }
-            //}
         }
     }
 }

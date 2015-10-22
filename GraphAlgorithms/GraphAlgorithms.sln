@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphAlgorithmsHomework", "GraphAlgorithmsHomework\GraphAlgorithmsHomework.csproj", "{20783F9B-F045-4BF9-BF58-BD2AE67535DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DistanceBetweenVertices", "GraphAlgorithmsHomework\DistanceBetweenVertices.csproj", "{20783F9B-F045-4BF9-BF58-BD2AE67535DC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreasInMatrix", "AreasInMatrix\AreasInMatrix.csproj", "{2AD309C1-EE71-41E9-8533-95CEE7B00BC0}"
 EndProject
