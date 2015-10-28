@@ -14,11 +14,14 @@
             FindPredecessors(graph, predecessors);
 
             bool nodeRemoved = true;
-            while (nodeRemoved)
+
+            foreach (var node in predecessors.Keys)
             {
-                nodeRemoved = false;
-                foreach (var node in predecessors.Keys)
+                while (nodeRemoved)
                 {
+                    nodeRemoved = false;
+                    //foreach (var node in predecessors.Keys)
+                    //{
                     if (predecessors[node] <= 1)
                     {
                         foreach (var child in graph[node])
@@ -26,13 +29,14 @@
                             if (predecessors.ContainsKey(child))
                             {
                                 predecessors[child]--;
-                            }                       
+                            }
                         }
 
                         predecessors.Remove(node);
                         nodeRemoved = true;
                         break;
                     }
+                    //}
                 }
             }
 
