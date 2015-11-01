@@ -57,8 +57,7 @@
                     break;
                 }
 
-                if ((conectedNodes[edge.StartNode]^conectedNodes[edge.EndNode])
-                    ||(!conectedNodes[edge.StartNode]&&!conectedNodes[edge.EndNode]))
+                if ((conectedNodes[edge.StartNode]^conectedNodes[edge.EndNode]))
                 {
                     totalWeight += edge.Weight;
                     conectedNodes[edge.StartNode] = true;
