@@ -25,10 +25,10 @@
             }
 
 
-            BelmondFord(nodes, edges, 0);
+            BellmandFord(nodes, edges, 0);
         }
 
-        private static void BelmondFord(int[] nodes, Edge[] edges, int startNode)
+        private static void BellmandFord(int[] nodes, Edge[] edges, int startNode)
         {
             int[] predcessors = new int[nodes.Length];
             double[] distance = new double[nodes.Length];
