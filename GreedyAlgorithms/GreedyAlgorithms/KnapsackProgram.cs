@@ -23,7 +23,7 @@
             double totalPrice = 0;
             for (int i = 0; i < items.Count; i++)
             {
-                if (items[i].Weight > capacity)
+                if (items[i].Weight >= capacity)
                 {
                     double percentCanTake = (capacity * 100) / (double)items[i].Weight;
                     double priesForThePart = (percentCanTake*items[i].Price)/(double)100;
