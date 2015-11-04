@@ -1,15 +1,13 @@
 ﻿namespace ProcessorScheduling
 {
     using System;
-    using System.Collections;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime;
     using System.Text.RegularExpressions;
 
-    class ProcessorProgram
+    internal class ProcessorProgram
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             int numberOfTasks = int.Parse(Regex.Match(Console.ReadLine(), "[\\d]+").ToString());
             Task[] tasks = new Task[numberOfTasks];
@@ -17,9 +15,9 @@
             for (int i = 0; i < numberOfTasks; i++)
             {
                 string[] currentLine = Console.ReadLine()
-                    .Split(new char[] { ' ', '-' }, StringSplitOptions.RemoveEmptyEntries);
-                Task current = new Task(int.Parse(currentLine[0]), int.Parse(currentLine[1]), i+1);
-                if (current.Deadline>maxDeadline)
+                    .Split(new[] { ' ', '-' }, StringSplitOptions.RemoveEmptyEntries);
+                Task current = new Task(int.Parse(currentLine[0]), int.Parse(currentLine[1]), i + 1);
+                if (current.Deadline > maxDeadline)
                 {
                     maxDeadline = current.Deadline;
                 }

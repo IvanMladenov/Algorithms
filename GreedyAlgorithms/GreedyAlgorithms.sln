@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FractionalKnapsackProblem",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProcessorScheduling", "ProcessorScheduling\ProcessorScheduling.csproj", "{8340DE3D-547E-4F34-A948-344D219568BA}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KnightsTour", "KnightsTour\KnightsTour.csproj", "{2500F429-0E24-49AB-A6F5-0504F0EE367F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{8340DE3D-547E-4F34-A948-344D219568BA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8340DE3D-547E-4F34-A948-344D219568BA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{8340DE3D-547E-4F34-A948-344D219568BA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2500F429-0E24-49AB-A6F5-0504F0EE367F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2500F429-0E24-49AB-A6F5-0504F0EE367F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2500F429-0E24-49AB-A6F5-0504F0EE367F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2500F429-0E24-49AB-A6F5-0504F0EE367F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
