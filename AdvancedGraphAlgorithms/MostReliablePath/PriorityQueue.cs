@@ -1,115 +1,78 @@
 ﻿using System;
+using System.Collections.Generic;
 
-public class PriorityQueue<T> where T : IComparable
+public class BinaryHeap<T>
+    where T : IComparable
 {
-    private T[] heap;
-    private int index;
+    private readonly List<T> heap;
 
-    public PriorityQueue()
+    public BinaryHeap()
     {
-        this.heap = new T[16];
-        this.index = 1;
+        this.heap = new List<T>();
     }
 
     public int Count
     {
         get
         {
-            return this.index - 1;
+            return this.heap.Count;
         }
     }
 
-    public void Enqueue(T element)
+    public T ExtractMax()
     {
-        if (this.index >= this.heap.Length)
+        var max = this.heap[0];
+        this.heap[0] = this.heap[this.heap.Count - 1];
+        this.heap.RemoveAt(this.heap.Count - 1);
+        if (this.heap.Count > 0)
         {
-            this.IncreaseArray();
+            this.HeapifyDown(0);
         }
 
-        this.heap[this.index] = element;
+        return max;
+    }
 
-        int childIndex = this.index;
-        int parentIndex = childIndex / 2;
-        this.index++;
-                                                                                          //< 
-        while (parentIndex >= 1 && this.heap[childIndex].CompareTo(this.heap[parentIndex]) > 0)
+    public void Insert(T node)
+    {
+        this.heap.Add(node);
+        this.HeapifyUp(this.heap.Count - 1);
+    }
+
+    private void HeapifyDown(int i)
+    {
+        var leftIndex = 2 * i + 1;
+        var rightIndex = 2 * i + 2;
+        var largest = i;
+        if (leftIndex < this.heap.Count && this.heap[leftIndex].CompareTo(this.heap[largest]) > 0)
         {
-            T swapValue = this.heap[parentIndex];
-            this.heap[parentIndex] = this.heap[childIndex];
-            this.heap[childIndex] = swapValue;
+            largest = leftIndex;
+        }
 
-            childIndex = parentIndex;
-            parentIndex = childIndex / 2;
+        if (rightIndex < this.heap.Count && this.heap[rightIndex].CompareTo(this.heap[largest]) > 0)
+        {
+            largest = rightIndex;
+        }
+
+        if (largest != i)
+        {
+            T old = this.heap[i];
+            this.heap[i] = this.heap[largest];
+            this.heap[largest] = old;
+            this.HeapifyDown(largest);
         }
     }
 
-    public T Dequeue()
+    private void HeapifyUp(int i)
     {
-        T result = this.heap[1];
-
-        this.heap[1] = this.heap[this.Count];
-        this.index--;
-
-        int rootIndex = 1;
-
-        while (true)
+        var parentIndex = (i - 1) / 2;
+        while (i > 0 && this.heap[i].CompareTo(this.heap[parentIndex]) > 0)
         {
-            int leftChildIndex = rootIndex * 2;
-            int rightChildIndex = (rootIndex * 2) + 1;
+            T old = this.heap[i];
+            this.heap[i] = this.heap[parentIndex];
+            this.heap[parentIndex] = old;
 
-            if (leftChildIndex > this.index)
-            {
-                break;
-            }
-
-            int minChild;
-            if (rightChildIndex > this.index)
-            {
-                minChild = leftChildIndex;
-            }
-            else
-            {                                                                       //<
-                if (this.heap[leftChildIndex].CompareTo(this.heap[rightChildIndex]) > 0)
-                {
-                    minChild = leftChildIndex;
-                }
-                else
-                {
-                    minChild = rightChildIndex;
-                }
-            }
-                                                                    //<
-            if (this.heap[minChild].CompareTo(this.heap[rootIndex]) > 0)
-            {
-                T swapValue = this.heap[rootIndex];
-                this.heap[rootIndex] = this.heap[minChild];
-                this.heap[minChild] = swapValue;
-
-                rootIndex = minChild;
-            }
-            else
-            {
-                break;
-            }
+            i = parentIndex;
+            parentIndex = (i - 1) / 2;
         }
-
-        return result;
-    }
-
-    public T Peek()
-    {
-        return this.heap[1];
-    }
-
-    private void IncreaseArray()
-    {
-        var copiedHeap = new T[this.heap.Length * 2];
-
-        for (int i = 0; i < this.heap.Length; i++)
-        {
-            copiedHeap[i] = this.heap[i];
-        }
-
-        this.heap = copiedHeap;
     }
 }

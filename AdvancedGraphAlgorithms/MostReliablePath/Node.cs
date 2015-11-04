@@ -17,7 +17,7 @@
 
         public int CompareTo(object other)
         {
-            return this.Reliability.CompareTo((other as Node).Reliability)*-1;
+            return this.Reliability.CompareTo((other as Node).Reliability);
         }
     }
 }

@@ -3,14 +3,13 @@
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using System.Runtime.Remoting.Metadata.W3cXsd2001;
     using System.Text.RegularExpressions;
 
     using ExtendCableNetwork;
 
-    class Program
+    internal class Program
     {
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             string[] firstLine = Regex.Split(Console.ReadLine(), "[^\\d]+");
             int nodes = int.Parse(firstLine[1]);
@@ -36,13 +35,13 @@
             {
                 for (int col = 0; col < matrix.GetLength(1); col++)
                 {
-                    if (matrix[row, col]==null)
+                    if (matrix[row, col] == null)
                     {
                         Console.Write("{0}", "0".PadLeft(3, ' '));
                     }
                     else
                     {
-                        Console.Write("{0}", matrix[row,col].ToString().PadLeft(3, ' '));
+                        Console.Write("{0}", matrix[row, col].ToString().PadLeft(3, ' '));
                     }
                 }
 
@@ -55,11 +54,11 @@
             int numberOfIterations = matrix.GetLength(0);
             for (int i = 0; i < numberOfIterations; i++)
             {
-                HashSet<int> blockedRows = new HashSet<int>{i};
-                HashSet<int> blockedCols = new HashSet<int>{i};
+                HashSet<int> blockedRows = new HashSet<int> { i };
+                HashSet<int> blockedCols = new HashSet<int> { i };
                 for (int j = 0; j < numberOfIterations; j++)
                 {
-                    if (matrix[i,j]==null)
+                    if (matrix[i, j] == null)
                     {
                         blockedCols.Add(j);
                     }
@@ -84,10 +83,10 @@
                             continue;
                         }
 
-                        if (row!=col)
+                        if (row != col)
                         {
                             int? newPath = matrix[i, col] + matrix[row, i];
-                            if (matrix[row, col]>newPath||matrix[row,col] == null)
+                            if (matrix[row, col] > newPath || matrix[row, col] == null)
                             {
                                 matrix[row, col] = newPath;
                             }
@@ -99,9 +98,9 @@
             }
         }
 
-        private static int?[,] InitializeMatrix(int nodes, Edge[] edges )
+        private static int?[,] InitializeMatrix(int nodes, Edge[] edges)
         {
-            int?[,] matrix = new int?[nodes, nodes];         
+            int?[,] matrix = new int?[nodes, nodes];
             foreach (var edge in edges)
             {
                 matrix[edge.StartNode, edge.EndNode] = edge.Weight;

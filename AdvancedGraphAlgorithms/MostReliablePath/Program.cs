@@ -2,124 +2,105 @@
 {
     using System;
     using System.Collections.Generic;
+    using System.Linq;
+    using System.Text.RegularExpressions;
 
     internal class Program
     {
         private static void Main(string[] args)
         {
-            int nodes = 7;
-            var nodesArr = new Node[nodes];
+            var graph = new Dictionary<Node, List<Edge>>();
+
+            int nodes = int.Parse(Regex.Match(Console.ReadLine(), "\\d+").ToString());
+            var nodesArr = new Node[nodes];          
             for (int i = 0; i < nodes; i++)
             {
                 nodesArr[i] = new Node(i);
+                graph.Add(nodesArr[i], new List<Edge>());
             }
-            int edges = 10;
-            Node startNode = nodesArr[0];
-            Node endNode = nodesArr[6];
 
-            var graph = new Dictionary<Node, List<Edge>>
-                            {
-                                {
-                                    nodesArr[0],
-                                    new List<Edge>
-                                        {
-                                            new Edge(nodesArr[3], 85),
-                                            new Edge(nodesArr[4], 88)
-                                        }
-                                },
-                                {
-                                    nodesArr[1],
-                                    new List<Edge>
-                                        {
-                                            new Edge(nodesArr[3], 95),
-                                            new Edge(nodesArr[6], 100),
-                                            new Edge(nodesArr[5], 5)
-                                        }
-                                },
-                                {
-                                    nodesArr[2],
-                                    new List<Edge>
-                                        {
-                                            new Edge(nodesArr[4], 14),
-                                            new Edge(nodesArr[6], 95)
-                                        }
-                                },
-                                {
-                                    nodesArr[3],
-                                    new List<Edge>
-                                        {
-                                            new Edge(nodesArr[0], 85),
-                                            new Edge(nodesArr[5], 98),
-                                            new Edge(nodesArr[1], 95)
-                                        }
-                                },
-                                {
-                                    nodesArr[4],
-                                    new List<Edge>
-                                        {
-                                            new Edge(nodesArr[0], 88),
-                                            new Edge(nodesArr[5], 99),
-                                            new Edge(nodesArr[2], 14)
-                                        }
-                                },
-                                {
-                                    nodesArr[5],
-                                    new List<Edge>
-                                        {
-                                            new Edge(nodesArr[3], 98),
-                                            new Edge(nodesArr[1], 5),
-                                            new Edge(nodesArr[4], 99),
-                                            new Edge(nodesArr[6], 90)
-                                        }
-                                }
-                            };
+            string[] startEnd = Regex.Split(Console.ReadLine(), "[^\\d]+");
+            int start = int.Parse(startEnd[1]);
+            int end = int.Parse(startEnd[2]);
+            Node startNode = nodesArr.FirstOrDefault(x=>x.Id==start);
+            Node endNode = nodesArr.FirstOrDefault(x=>x.Id == end);
+
+            int numberOfEdges = int.Parse(Regex.Match(Console.ReadLine(), "\\d+").ToString());
+            for (int i = 0; i < numberOfEdges; i++)
+            {
+                var current = Regex.Split(Console.ReadLine(), "[^\\d]+");
+                var firstNode = nodesArr[int.Parse(current[0])];
+                var secondNode = nodesArr[int.Parse(current[1])];
+                var percentage = double.Parse(current[2]);
+
+                graph[firstNode].Add(new Edge(secondNode, percentage));
+                graph[secondNode].Add(new Edge(firstNode, percentage));
+            }
 
             Dijkstra(startNode, graph);
-            //List<int> path = FindPath(graph, startNode, endNode);
-            Console.WriteLine(nodesArr[6].Reliability);
+            List<int> path = FindPath(endNode);
+
+            Console.WriteLine(Math.Round(endNode.Reliability, 2));
+            Console.WriteLine(string.Join(" -> ", path));
         }
 
-        private static List<int> FindPath(Dictionary<Node, List<Edge>> graph, Node startNode, Node endNode)
+        private static List<int> FindPath(Node endNode)
         {
             List<int> output = new List<int>();
-
+            output.Add(endNode.Id);
+            var node = endNode;
             while (true)
             {
-                
+                if (node.PrevNode == null)
+                {
+                    break;
+                }
+
+                output.Add(node.PrevNode.Id);
+                node = node.PrevNode;
             }
 
+            output.Reverse();
             return output;
         }
 
         private static void Dijkstra(Node startNode, Dictionary<Node, List<Edge>> graph)
         {
-            var priorityQueue = new PriorityQueue<Node>();
+            var priorityQueue = new BinaryHeap<Node>();
 
             foreach (var node in graph.Keys)
             {
-                node.Reliability = double.PositiveInfinity;
+                node.Reliability = double.NegativeInfinity;
             }
 
             startNode.Reliability = 100.0;
-            priorityQueue.Enqueue(startNode);
+            priorityQueue.Insert(startNode);
+            HashSet<Node> visited = new HashSet<Node>();
+            visited.Add(startNode);
 
-            while (priorityQueue.Count!=0)
+            while (priorityQueue.Count != 0)
             {
-                var current = priorityQueue.Dequeue();
+                var current = priorityQueue.ExtractMax();
 
-                if (double.IsPositiveInfinity(current.Reliability))
+                if (double.IsNegativeInfinity(current.Reliability))
                 {
                     break;
                 }
 
                 foreach (var edge in graph[current])
                 {
-                    var newR = (current.Reliability * edge.Percentage);
+                    var newR = (current.Reliability * edge.Percentage) / 100;
                     if (newR>edge.Node.Reliability)
                     {
                         edge.Node.Reliability = newR;
                         edge.Node.PrevNode = current;
-                        priorityQueue.Enqueue(edge.Node);
+                    }
+                    
+
+                    if (!visited.Contains(edge.Node))
+                    {                      
+                        visited.Add(edge.Node);
+                        priorityQueue.Insert(edge.Node);
                     }
                 }
             }
