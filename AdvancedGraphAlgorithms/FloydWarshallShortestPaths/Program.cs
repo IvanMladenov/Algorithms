@@ -93,8 +93,6 @@
                         }
                     }
                 }
-                //PrintMatrix(matrix);
-                //Console.WriteLine();
             }
         }
 

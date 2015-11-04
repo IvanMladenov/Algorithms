@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MostReliablePath", "MostRel
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FloydWarshallShortestPaths", "FloydWarshallShortestPaths\FloydWarshallShortestPaths.csproj", "{D329CF59-1090-4671-AB69-DDBA4DCF161D}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortestPathWithNegativeEdges", "ShortestPathWithNegativeEdges\ShortestPathWithNegativeEdges.csproj", "{7EB080F0-B041-489F-A17E-97F093B5F06A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{D329CF59-1090-4671-AB69-DDBA4DCF161D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{D329CF59-1090-4671-AB69-DDBA4DCF161D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{D329CF59-1090-4671-AB69-DDBA4DCF161D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7EB080F0-B041-489F-A17E-97F093B5F06A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7EB080F0-B041-489F-A17E-97F093B5F06A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7EB080F0-B041-489F-A17E-97F093B5F06A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7EB080F0-B041-489F-A17E-97F093B5F06A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
