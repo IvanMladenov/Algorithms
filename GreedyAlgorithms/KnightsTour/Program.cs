@@ -26,7 +26,6 @@
 
             int row = 0;
             int col = 0;
-            int numberOfMoves = 1;
             board[row][col] = 1;
 
             for (int i = 1; i < n * n; i++)
