@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LabAlgorithms12November", "LabAlgorithms12November\LabAlgorithms12November.csproj", "{C4C20A19-5A4A-45D9-B743-CADEF0F8A134}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blocks", "LabAlgorithms12November\Blocks.csproj", "{C4C20A19-5A4A-45D9-B743-CADEF0F8A134}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
