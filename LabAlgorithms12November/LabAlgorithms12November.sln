@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blocks", "LabAlgorithms12November\Blocks.csproj", "{C4C20A19-5A4A-45D9-B743-CADEF0F8A134}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZigZagMatrix", "ZigZagMatrix\ZigZagMatrix.csproj", "{1F7BBCBD-7966-4BC0-B735-655AC490D814}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C4C20A19-5A4A-45D9-B743-CADEF0F8A134}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C4C20A19-5A4A-45D9-B743-CADEF0F8A134}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C4C20A19-5A4A-45D9-B743-CADEF0F8A134}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1F7BBCBD-7966-4BC0-B735-655AC490D814}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1F7BBCBD-7966-4BC0-B735-655AC490D814}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1F7BBCBD-7966-4BC0-B735-655AC490D814}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1F7BBCBD-7966-4BC0-B735-655AC490D814}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
