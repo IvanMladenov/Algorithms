@@ -23,6 +23,8 @@ namespace ProblemSolvingHomework
 
             allRect = allRect.OrderBy(x => x.StartX).ToArray();
             List<Rectangle> overlapRectangles = new List<Rectangle>();
+
+            // Take all overlaping areas as rectangles and put it to overlapRectangles List above.
             for (int i = 0; i < allRect.Length - 1; i++)
             {
                 for (int j = i + 1; j < allRect.Length; j++)
@@ -35,7 +37,7 @@ namespace ProblemSolvingHomework
                 }
             }
 
-            //overlapRectangles = overlapRectangles.OrderBy(x => x.StartX).ToList();
+            overlapRectangles = overlapRectangles.OrderByDescending(x => x.EndX).ToList();
             bool[] reduced = new bool[overlapRectangles.Count];
             for (int i = 0; i < overlapRectangles.Count; i++)
             {
@@ -58,6 +60,7 @@ namespace ProblemSolvingHomework
 
         }
 
+        /// Method checks for overlaping area and return it as new Rectangle. In case of no such area returns null.
         private static Rectangle GetOverlapingRectangle(Rectangle first, Rectangle second)
         {
             if (second.StartX<first.EndX&&second.StartX>=first.StartX)
