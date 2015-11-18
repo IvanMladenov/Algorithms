@@ -37,8 +37,9 @@ namespace ProblemSolvingHomework
                 }
             }
 
-            overlapRectangles = overlapRectangles.OrderByDescending(x => x.EndX).ToList();
+            // Need to check if we are reduced already current rectangle and to avoid multiple reduce when 3 or more rectangles overlap
             bool[] reduced = new bool[overlapRectangles.Count];
+            //Like above we get overlaping area as rectangle but this time just reduce area of current rectangle if it is not reduced yet
             for (int i = 0; i < overlapRectangles.Count; i++)
             {
                 for (int j = i+1; j < overlapRectangles.Count; j++)
