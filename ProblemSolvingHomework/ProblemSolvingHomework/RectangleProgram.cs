@@ -30,82 +30,96 @@ namespace ProblemSolvingHomework
                 for (int j = i + 1; j < allRect.Length; j++)
                 {
                     Rectangle overlap = GetOverlapingRectangle(allRect[i], allRect[j]);
-                    if (overlap!=null)
+                    if (overlap != null)
                     {
                         overlapRectangles.Add(overlap);
                     }
                 }
             }
 
-            // Need to check if we are reduced already current rectangle and to avoid multiple reduce when 3 or more rectangles overlap
-            bool[] reduced = new bool[overlapRectangles.Count];
-            //Like above we get overlaping area as rectangle but this time just reduce area of current rectangle if it is not reduced yet
-            for (int i = 0; i < overlapRectangles.Count; i++)
+            int startX = overlapRectangles.Min(x => x.StartX);
+            int endX = overlapRectangles.Max(x => x.EndX);
+            int startY = overlapRectangles.Min(x => x.StartY);
+            int endY = overlapRectangles.Max(x => x.EndY);
+
+            int[,] matrix = new int[Math.Abs(endX) - Math.Abs(startX), Math.Abs(endY) - Math.Abs(startY)];
+
+            foreach (var overlapRectangle in overlapRectangles)
             {
-                for (int j = i+1; j < overlapRectangles.Count; j++)
+                startX = overlapRectangle.StartX + 100;
+                endX = overlapRectangle.EndX + 1000;
+                startY = 1000 - overlapRectangle.StartY;
+                endY = 1000 - overlapRectangle.EndY;
+
+                for (int x = startX; x < endX; x++)
                 {
-                    Rectangle overlap = GetOverlapingRectangle(overlapRectangles[i], overlapRectangles[j]);
-                    if (overlap != null)
+                    for (int y = startY; y < endY; y++)
                     {
-                        if (!reduced[i])
-                        {
-                            overlapRectangles[i].Area -= overlap.Area;
-                            reduced[i] = true;
-                        }
+                        matrix[x, y]++;
                     }
                 }
             }
 
-            var sum = overlapRectangles.Sum(x => x.Area);
-            Console.WriteLine(sum);
+            int count = 0;
+            for (int row = 0; row < matrix.GetLength(0); row++)
+            {
+                for (int col = 0; col < matrix.GetLength(1); col++)
+                {
+                    if (matrix[row, col] > 1)
+                    {
+                        count++;
+                    }
+                }
+            }
 
+            Console.WriteLine(count);
         }
 
         /// Method checks for overlaping area and return it as new Rectangle. In case of no such area returns null.
         private static Rectangle GetOverlapingRectangle(Rectangle first, Rectangle second)
         {
-            if (second.StartX<first.EndX&&second.StartX>=first.StartX)
+            if (second.StartX < first.EndX && second.StartX >= first.StartX)
             {
                 int startX = second.StartX;
                 int endX = first.EndX;
                 if (second.EndX < first.EndX)
                 {
                     endX = second.EndX;
-                } 
+                }
 
                 if (second.StartY >= first.StartY && second.StartY < first.EndY)
                 {
                     int startY = second.StartY;
                     int endY = first.EndY;
-                    if (second.EndY<first.EndY)
+                    if (second.EndY < first.EndY)
                     {
                         endY = second.EndY;
                     }
 
                     return new Rectangle(startX, endX, startY, endY);
                 }
-                else if (second.EndY<=first.EndY&&second.EndY>first.StartY)
+                else if (second.EndY <= first.EndY && second.EndY > first.StartY)
                 {
                     int endY = second.EndY;
                     int startY = first.StartY;
-                    if (second.StartY>first.StartY)
+                    if (second.StartY > first.StartY)
                     {
                         startY = second.StartY;
                     }
 
                     return new Rectangle(startX, endX, startY, endY);
                 }
-                else if (second.EndY>=first.EndY&&second.StartY<=first.StartY)
+                else if (second.EndY >= first.EndY && second.StartY <= first.StartY)
                 {
                     return new Rectangle(startX, endX, first.StartY, first.EndY);
                 }
             }
 
             return null;
-        } 
+        }
     }
 
-    public class Rectangle
+    public class Rectangle : IComparable<Rectangle>
     {
         public Rectangle(int startX, int endX, int startY, int endY)
         {
@@ -113,7 +127,7 @@ namespace ProblemSolvingHomework
             this.EndX = endX;
             this.StartY = startY;
             this.EndY = endY;
-            Area = Math.Abs((startX - endX)*(StartY - endY));
+            Area = Math.Abs((startX - endX) * (StartY - endY));
         }
 
         public int StartX { get; set; }
@@ -125,5 +139,18 @@ namespace ProblemSolvingHomework
         public int EndY { get; set; }
 
         public int Area { get; set; }
+
+        public int CompareTo(Rectangle other)
+        {
+            if (StartX == other.StartX && EndX == other.EndX)
+            {
+                if (StartY == other.StartY && EndY == other.EndY)
+                {
+                    return 0;
+                }
+            }
+
+            return -1;
+        }
     }
 }
