@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GroupPermutations", "GroupP
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "GraphCycles", "GraphCycles\GraphCycles.csproj", "{E384FF14-04C1-47F1-9CEE-6E346FCE80E5}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Bridges", "Bridges\Bridges.csproj", "{6725442F-2374-4A49-8472-0ABA79EBF8C8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BridgesDynamic", "BridgesDynamic\BridgesDynamic.csproj", "{E1F62933-F715-4BD9-900D-9043C7798C9C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{E384FF14-04C1-47F1-9CEE-6E346FCE80E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E384FF14-04C1-47F1-9CEE-6E346FCE80E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E384FF14-04C1-47F1-9CEE-6E346FCE80E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6725442F-2374-4A49-8472-0ABA79EBF8C8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6725442F-2374-4A49-8472-0ABA79EBF8C8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6725442F-2374-4A49-8472-0ABA79EBF8C8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6725442F-2374-4A49-8472-0ABA79EBF8C8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1F62933-F715-4BD9-900D-9043C7798C9C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1F62933-F715-4BD9-900D-9043C7798C9C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1F62933-F715-4BD9-900D-9043C7798C9C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1F62933-F715-4BD9-900D-9043C7798C9C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
