@@ -22,9 +22,9 @@ namespace BridgesDynamic
                     maxBridges[i, j] = -1;
                 }
             }
+
             int result = CalcMaxBridges(north.Length - 1, south.Length - 1);
             Console.WriteLine(result);
-            //Console.WriteLine(maxBridges[north.Length - 1, south.Length - 1]);
         }
 
         private static int CalcMaxBridges(int x, int y)
