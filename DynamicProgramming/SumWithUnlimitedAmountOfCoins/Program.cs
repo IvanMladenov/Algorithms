@@ -16,62 +16,90 @@
                 .Split(new[] { '{', '}', ',' }, StringSplitOptions.RemoveEmptyEntries)
                 .Select(int.Parse).ToArray();
 
-            Array.Sort(coins);
+            //Array.Sort(coins);
 
-            for (int i = coins.Length - 1; i >= 0; i--)
-            {
-                int currentIndex = i;
+            //for (int i = coins.Length - 1; i >= 0; i--)
+            //{
+            //    int currentIndex = i;
 
-                GenerateCombinations(coins, currentIndex, targetSum);
-            }
+            //    GenerateCombinations(coins, currentIndex, targetSum);
+            //}
+
+            GeneratCombinations(targetSum, coins);
 
             Console.WriteLine(combinationsCount);
         }
 
-        private static void GenerateCombinations(int[] coins, int currentIndex, int targetSum)
+        private static void GeneratCombinations(int targetSum, int[] coins)
         {
-            if (currentIndex < 0)
-            {
-                return;
-            }
+            int[,] memo = new int[coins.Length+1, targetSum + 1];
 
-            int coinsCount = targetSum / coins[currentIndex];
-            int remainder = targetSum % coins[currentIndex];
-
-            if (remainder == 0)
+            for (int row = 1; row < memo.GetLength(0); row++)
             {
-                combinationsCount++;
-                while (true)
+                for (int col = 1; col < memo.GetLength(1); col++)
                 {
-                    if (coinsCount == 1)
+                    if (coins[row-1] == col)
                     {
-                        break;
+                        memo[row, col] = memo[row - 1, col] + 1;
                     }
-                    coinsCount--;
-                    int newTarget = targetSum - coinsCount * coins[currentIndex];
-                    for (int i = currentIndex - 1; i >= 0; i--)
+                    else if (coins[row-1]<col)
                     {
-                        GenerateCombinations(coins, i, newTarget);
+                        memo[row, col] = memo[row - 1, col] + memo[row, col - coins[row-1]];
+                    }
+                    else
+                    {
+                        memo[row, col] = memo[row - 1, col];
                     }
                 }
             }
-            else
-            {
-                if (coinsCount > 0)
-                {
-                    int remainderAddition = 0;
-                    while (coinsCount > 0)
-                    {
-                        for (int i = currentIndex - 1; i >= 0; i--)
-                        {
-                            GenerateCombinations(coins, i, remainder + remainderAddition);
-                        }
 
-                        coinsCount--;
-                        remainderAddition += coins[currentIndex];
-                    }
-                }
-            }
+            combinationsCount = memo[coins.Length, targetSum];
         }
+
+        ////private static void GenerateCombinations(int[] coins, int currentIndex, int targetSum)
+        ////{
+        ////    if (currentIndex < 0)
+        ////    {
+        ////        return;
+        ////    }
+
+        ////    int coinsCount = targetSum / coins[currentIndex];
+        ////    int remainder = targetSum % coins[currentIndex];
+
+        ////    if (remainder == 0)
+        ////    {
+        ////        combinationsCount++;
+        ////        while (true)
+        ////        {
+        ////            if (coinsCount == 1)
+        ////            {
+        ////                break;
+        ////            }
+        ////            coinsCount--;
+        ////            int newTarget = targetSum - coinsCount * coins[currentIndex];
+        ////            for (int i = currentIndex - 1; i >= 0; i--)
+        ////            {
+        ////                GenerateCombinations(coins, i, newTarget);
+        ////            }
+        ////        }
+        ////    }
+        ////    else
+        ////    {
+        ////        if (coinsCount > 0)
+        ////        {
+        ////            int remainderAddition = 0;
+        ////            while (coinsCount > 0)
+        ////            {
+        ////                for (int i = currentIndex - 1; i >= 0; i--)
+        ////                {
+        ////                    GenerateCombinations(coins, i, remainder + remainderAddition);
+        ////                }
+
+        ////                coinsCount--;
+        ////                remainderAddition += coins[currentIndex];
+        ////            }
+        ////        }
+        ////    }
+        ////}
     }
 }
