@@ -1,29 +1,51 @@
-﻿namespace DynamicProgramming
+﻿using System;
+
+namespace DynamicProgramming
 {
-    using System;
-    using System.Collections.Generic;
-
-    class Program
+    internal class Program
     {
-        static void Main()
+        private static void Main()
         {
-            int n = int.Parse(Console.ReadLine());
-            int k = int.Parse(Console.ReadLine());
+            var n = int.Parse(Console.ReadLine());
+            var k = int.Parse(Console.ReadLine());
 
-            int result = GetNumber(n, k);
+            var result = GetNumber(n, k);
             Console.WriteLine(result);
         }
 
+        //public static int GetNumber(int x, int y)
+        //{
+        //    if ((x + 1) == 1 || (y + 1) == 1 || x == y)
+        //    {
+        //        return 1;
+        //    }
+        //    else
+        //    {
+        //        return GetNumber(x - 1, y - 1) + GetNumber(x - 1, y);
+        //    }
+        //}
+
+        //// Method using memoization, very fast
         public static int GetNumber(int x, int y)
         {
-            if ((x + 1) == 1 || (y + 1) == 1 || x == y)
+            var pyramid = new int[x + 1][];
+            for (var i = 0; i < pyramid.Length; i++)
             {
-                return 1;
+                pyramid[i] = new int[i + 1];
+                for (var j = 0; j < i + 1; j++)
+                {
+                    if (j == 0 || j == i)
+                    {
+                        pyramid[i][j] = 1;
+                    }
+                    else
+                    {
+                        pyramid[i][j] = pyramid[i - 1][j - 1] + pyramid[i - 1][j];
+                    }
+                }
             }
-            else
-            {
-                return GetNumber(x - 1, y - 1) + GetNumber(x - 1, y);
-            }
+
+            return pyramid[x][y];
         }
     }
 }
